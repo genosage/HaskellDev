@@ -27,8 +27,7 @@ showMtree :: Show a => Mtree a -> String
 showMtree a = showMtreeNew 0 a
 
 showMtreeNew :: Show a => Int -> Mtree a -> String
-showMtreeNew i (Mnode n []) = printSpace i ++ show n ++ "\n"
-showMtreeNew i (Mnode n lst) = showMtreeNew i (Mnode n []) ++ listToString(map (showMtreeNew (i+1)) lst)
+showMtreeNew i (Mnode n lst) = printSpace i ++ show n ++ "\n" ++ listToString(map (showMtreeNew (i+1)) lst)
 
 printSpace :: Int -> String
 printSpace i
