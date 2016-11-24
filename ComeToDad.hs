@@ -254,14 +254,9 @@ same_shape Nil (Node3 _ _ _ _) = False
 same_shape (Node3 _ _ _ _) Nil = False
 same_shape (Node3 _ l1 m1 r1) (Node3 _ l2 m2 r2) = same_shape l1 l2 && same_shape m1 m2 && same_shape r1 r2
 
-
-
-
-
-
-
-
-
+subsequences1 :: [a] -> [[a]]
+subsequences1 [] = [[]]
+subsequences1 (x:xs) = (subsequences1 xs) ++ (map (x:) (subsequences1 xs))
 
 
 
